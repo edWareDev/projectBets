@@ -1,0 +1,542 @@
+.inv {
+  display: none !important;
+}
+
+.container {
+  max-width: 120rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+}
+
+.loaderContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.loaderContainer .loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #0847fd;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  animation: spin 2s linear infinite;
+  top: 50%;
+}
+.loaderContainer img {
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+header {
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+}
+header .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 48vh);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 96vh;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+main .futureMatchsContainer {
+  grid-area: 1/1/3/2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+  height: 98%;
+  position: relative;
+}
+main .futureMatchsContainer .liveMatchs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  top: 0;
+  position: sticky;
+}
+main .futureMatchsContainer .liveMatchs .match {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5333333333);
+  width: 700px;
+  height: 130px;
+  background-color: white;
+}
+main .futureMatchsContainer .liveMatchs .match .timeDate {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.8rem;
+}
+main .futureMatchsContainer .liveMatchs .match .timeDate span {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+main .futureMatchsContainer .liveMatchs .match .teams {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .team1,
+main .futureMatchsContainer .liveMatchs .match .teams .team2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  width: 40%;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .team1 .imgContainer,
+main .futureMatchsContainer .liveMatchs .match .teams .team2 .imgContainer {
+  width: 50px;
+  height: 50px;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .team1 .teamName,
+main .futureMatchsContainer .liveMatchs .match .teams .team2 .teamName {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inputs span {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inputs span::selection {
+  color: none;
+  background: none;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inputs input {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 3rem;
+  background-color: transparent;
+  border: none;
+  user-select: none;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inputs input::selection {
+  color: none;
+  background: none;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inPredicted {
+  background-color: rgba(0, 0, 0, 0.2666666667);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inPredicted span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0 0.8rem;
+  color: white;
+}
+main .futureMatchsContainer .liveMatchs .match .teams .result .inPredicted input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 2px 0;
+}
+main .futureMatchsContainer .liveMatchs .match .userResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  user-select: none;
+  border: none;
+}
+main .futureMatchsContainer .liveMatchs .match .userResult span {
+  animation: parpadeo 1s infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  color: red;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+main .futureMatchsContainer .futureMatchs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main .futureMatchsContainer .futureMatchs .match {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5333333333);
+  width: 700px;
+  height: 130px;
+}
+main .futureMatchsContainer .futureMatchs .match .timeDate {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.8rem;
+}
+main .futureMatchsContainer .futureMatchs .match .timeDate span {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+main .futureMatchsContainer .futureMatchs .match .teams {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .team1,
+main .futureMatchsContainer .futureMatchs .match .teams .team2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  width: 40%;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .team1 .imgContainer,
+main .futureMatchsContainer .futureMatchs .match .teams .team2 .imgContainer {
+  width: 50px;
+  height: 50px;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .team1 .teamName,
+main .futureMatchsContainer .futureMatchs .match .teams .team2 .teamName {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result .inputs span {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result .inputs input {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 3rem;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result .inPredicted {
+  background-color: rgba(0, 0, 0, 0.2666666667);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.1rem;
+  padding: 0.2rem;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result .inPredicted span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0 0.8rem;
+  color: white;
+}
+main .futureMatchsContainer .futureMatchs .match .teams .result .inPredicted input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 2px 0;
+}
+main .futureMatchsContainer .futureMatchs .match .userResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  user-select: none;
+}
+main .futureMatchsContainer .futureMatchs .match .userResult button {
+  font-weight: 600;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.4rem;
+  background-color: gold;
+  color: rgba(0, 0, 0, 0.6666666667);
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  cursor: pointer;
+  box-shadow: 0px 0px 0.7rem rgba(0, 0, 0, 0.4);
+}
+main .futureMatchsContainer .futureMatchs .match .userResult .predicted {
+  font-weight: 400;
+  cursor: auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2666666667);
+  border: none;
+  box-shadow: none;
+}
+main .futureMatchsContainer .futureMatchs .match .userResult .noLogin {
+  cursor: auto;
+  color: gold;
+  background-color: transparent;
+  box-shadow: none;
+}
+main .tableContainer {
+  grid-area: 1/2/2/3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .tableContainer .tableUsers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+}
+main .tableContainer .tableUsers section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+main .tableContainer .tableUsers section .header {
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  background-color: rgba(0, 0, 0, 0.4666666667);
+  color: white;
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+main .tableContainer .tableUsers section .campo {
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  padding: 0.3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .tableContainer .tableUsers section .user {
+  width: 46%;
+}
+main .tableContainer .tableUsers section .predicts {
+  width: 18%;
+}
+main .tableContainer .tableUsers section .acerts {
+  width: 18%;
+}
+main .tableContainer .tableUsers section .fails {
+  width: 18%;
+}
+main .pastMatchsContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-height: 100%;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+main .pastMatchsContainer .pastMatchs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2666666667);
+  overflow-y: scroll;
+}
+main .pastMatchsContainer .pastMatchs .match {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  padding: 1rem;
+  width: 100%;
+  height: 6rem;
+}
+main .pastMatchsContainer .pastMatchs .match .timeDate {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 12%;
+}
+main .pastMatchsContainer .pastMatchs .match .timeDate span {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+main .pastMatchsContainer .pastMatchs .match .teams {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .team1,
+main .pastMatchsContainer .pastMatchs .match .teams .team2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 40%;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .team1 .imgContainer,
+main .pastMatchsContainer .pastMatchs .match .teams .team2 .imgContainer {
+  width: 3rem;
+  height: 3rem;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .team1 .teamName,
+main .pastMatchsContainer .pastMatchs .match .teams .team2 .teamName {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result .inputs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2666666667);
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result .inputs span {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0 0.8rem;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result .inputs input {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result .inCorrect input {
+  color: rgba(0, 170, 0, 0.8);
+}
+main .pastMatchsContainer .pastMatchs .match .teams .result .inFailed input {
+  color: rgba(170, 0, 0, 0.8);
+}
+main .pastMatchsContainer .pastMatchs .match .userResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  color: white;
+  user-select: none;
+}
+main .pastMatchsContainer .pastMatchs .match .noPredicted {
+  color: rgba(0, 0, 0, 0.2666666667);
+}
+main .pastMatchsContainer .pastMatchs .match .correct {
+  color: rgba(0, 170, 0, 0.8);
+}
+main .pastMatchsContainer .pastMatchs .match .failed {
+  color: rgba(170, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BETS</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>BETS</h1>
+            <h2>SALDO: 500</h2>
+        </div>
+    </header>
+    <main>
+        <div class="futureMatchsContainer">
+            <div class="liveMatchs">
+                <section class="match">
+                    <div class="timeDate">
+                        <span>AHORA MISMO</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult">
+                        <span>EN VIVO</span>
+                    </div>
+                </section>
+                <section class="match">
+                    <div class="timeDate">
+                        <span>AHORA MISMO</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                            <div class="inputs inPredicted">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult">
+                        <span>EN VIVO</span>
+                    </div>
+                </section>
+            </div>
+            <div class="futureMatchs">
+                <section class="match">
+                    <div class="timeDate">
+                        <span>EN 10 MINUTOS</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input type="text" max="2" min="0">
+                                <span>:</span>
+                                <input type="text" max="2" min="0">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <button>PREDECIR!</button>
+                </section>
+                <section class="match">
+                    <div class="timeDate">
+                        <span>EN 2 HORAS</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                            <div class="inputs inPredicted">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult predicted">PREDECIDO</div>
+                </section>
+            </div>
+        </div>
+        <div class="tableContainer">
+            <div class="tableUsers">
+                <section>
+                    <div class="header user">Usuario</div>
+                    <div class="header predicts">Predicciones</div>
+                    <div class="header acerts">Aciertos</div>
+                    <div class="header fails">Fallas</div>
+                </section>
+                <section>
+                    <div class="campo user">Edward</div>
+                    <div class="campo predicts">10</div>
+                    <div class="campo acerts">5</div>
+                    <div class="campo fails">5</div>
+                </section>
+                <section>
+                    <div class="campo user">Edward</div>
+                    <div class="campo predicts">10</div>
+                    <div class="campo acerts">5</div>
+                    <div class="campo fails">5</div>
+                </section>
+                <section>
+                    <div class="campo user">Edward</div>
+                    <div class="campo predicts">10</div>
+                    <div class="campo acerts">5</div>
+                    <div class="campo fails">5</div>
+                </section>
+            </div>
+        </div>
+        <div class="pastMatchsContainer">
+            <div class="pastMatchs">
+                <section class="match">
+                    <div class="timeDate">
+                        <span>25/05/2023</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult noPredicted"><i class="fa-solid fa-minus"></i></div>
+                </section>
+                <section class="match">
+                    <div class="timeDate">
+                        <span>25/05/2023</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs inCorrect">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult correct"><i class="fa-solid fa-check"></i></div>
+                </section>
+                <section class="match">
+                    <div class="timeDate">
+                        <span>24/04/2023</span>
+                    </div>
+                    <div class="teams">
+                        <div class="team1">
+                            <div class="imgContainer">
+                                <img src="./balrogs.webp" alt="">
+                            </div>
+                            <div class="teamName">BALROGS</div>
+                        </div>
+                        <div class="result">
+                            <div class="inputs">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                            <div class="inputs inFailed">
+                                <input disabled type="text" max="2" min="0" readonly value="0">
+                                <span>:</span>
+                                <input disabled type="text" max="2" min="0" readonly value="2">
+                            </div>
+                        </div>
+                        <div class="team2">
+                            <div class="teamName">BEASTCOAST</div>
+                            <div class="imgContainer">
+                                <img src="./beastcoast.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userResult failed"><i class="fa-solid fa-xmark"></i></div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
